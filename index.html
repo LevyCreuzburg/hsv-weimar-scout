@@ -21,10 +21,10 @@
 
     <section class="toolbar card">
       <div class="field"><label>Meine Mannschaft</label><input id="teamName" placeholder="z. B. HSV Weimar" /></div>
-      <div class="field"><label>Gegner</label><input id="opponentName" placeholder="Gegner" /></div>
+      <div class="field"><label>Gegner</label><input id="opponentName" list="opponentSuggestions" placeholder="Gegner" /><datalist id="opponentSuggestions"></datalist></div>
       <div class="field compact"><label>Datum</label><input id="gameDate" type="date" /></div>
       <div class="field compact"><label>Halbzeit</label><select id="half"><option>1. Halbzeit</option><option>2. Halbzeit</option><option>Verlängerung</option></select></div>
-      <div class="field saved-games"><label>Gespeicherte Spiele</label><select id="savedGames"><option value="">Aktuelles Spiel</option></select></div>
+      <div class="field saved-games"><label>Gespeicherte Spiele</label><input id="historySearch" placeholder="Alte Spiele suchen..." /><select id="historyFilter"><option value="all">Alle Spiele</option><option value="win">Siege</option><option value="draw">Unentschieden</option><option value="loss">Niederlagen</option></select><select id="savedGames"><option value="">Aktuelles Spiel</option></select></div>
     </section>
 
     <nav class="tabs"><button class="tab active" data-tab="live">Live erfassen</button><button class="tab" data-tab="stats">Statistik</button><button class="tab" data-tab="roster">Spieler</button><button class="tab" data-tab="season">Saison</button></nav>
