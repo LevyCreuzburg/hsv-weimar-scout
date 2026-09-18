@@ -1,0 +1,116 @@
+HANDBALL SCOUT – ERWEITERUNGEN
+================================
+
+Diese Liste sammelt mögliche zukünftige Funktionen.
+
+
+BEREITS UMGESETZT
+-----------------
+[x] Spielhistorie und gespeicherte Spiele
+[x] Tore, Fehlwürfe, Paraden, Gegentore und Assists
+[x] Technische Fehler mit Kategorien
+[x] Positionen für Spieler/innen
+[x] Torwart-Auswahl bei Paraden
+[x] Zeitstrafen
+[x] Gelbe und rote Karten mit Begründung
+[x] Auswechslungen mit "kommt rein" und "geht raus"
+[x] Dunkler Modus
+[x] Saisonverwaltung: neue Saison, Saisonwechsel und Saison löschen
+[x] Saison- und Spielerstatistiken
+[x] Anklickbare Spielerstatistik mit Detailansicht
+[x] Fehler-, Karten- und Strafengründe in der Detailansicht
+[x] Export und Import als JSON-Datei
+[x] Responsive Darstellung für Handy, Tablet und PC
+
+
+NOCH OFFEN – SPIELVERWALTUNG
+----------------------------
+[ ] Spielorte und Wettbewerbe speichern
+[ ] Spielstatus: geplant, läuft, beendet
+[ ] Gegner aus früheren Spielen auswählen
+[ ] Suche und Filter für alte Spiele
+[ ] Automatische Spielnummern
+[ ] Mannschaften und Vereine getrennt verwalten
+
+
+NOCH OFFEN – LIVE-ERFASSUNG
+---------------------------
+[ ] Spieluhr mit Start, Pause und Halbzeit
+[ ] Automatische Zeitstempel für jede Aktion
+[ ] 7-Meter als eigene Statistik
+[ ] Freiwürfe erfassen
+[ ] Ballverluste genauer unterscheiden
+[ ] Abpraller und Blocks erfassen
+[ ] Steals erfassen
+[ ] Team-Time-outs erfassen
+[ ] Überzahl und Unterzahl dokumentieren
+[ ] Aktionen rückgängig machen
+[ ] Wechselhistorie mit genauer Spielzeit
+
+
+NOCH OFFEN – TOR- UND WURFSTATISTIK
+-----------------------------------
+[ ] Wurfposition auf einem Handballfeld anklicken
+[ ] Trefferquote je Wurfzone
+[ ] Torhüterparaden je Wurfzone
+[ ] Gegentore je Wurfzone
+[ ] Wurfarten: Sprungwurf, Schlagwurf, Heber usw.
+[ ] Tore nach Gegenstoß
+[ ] Tore nach Spielzug
+[ ] 7-Meter-Quote
+
+
+NOCH OFFEN – SPIELER/INNEN
+--------------------------
+[ ] Fotos für Spieler/innen
+[ ] Spielminuten automatisch berechnen
+[ ] Ein- und Auswechselzeiten auswerten
+[ ] Plus-Minus-Wert
+[ ] Spielerbewertung
+[ ] Notizen zu einzelnen Spieler/innen
+[ ] Verletzungen und Ausfälle verwalten
+
+
+NOCH OFFEN – STATISTIK UND AUSWERTUNG
+-------------------------------------
+[ ] Erste und zweite Halbzeit vergleichen
+[ ] Heim- und Auswärtsspiele vergleichen
+[ ] Diagramme und Grafiken
+[ ] Teamdurchschnittswerte
+[ ] Entwicklung einzelner Spieler/innen
+[ ] Beste Torschützen automatisch anzeigen
+[ ] Beste Torhüter automatisch anzeigen
+[ ] Häufigste Fehler automatisch anzeigen
+[ ] Statistikvergleich zwischen zwei Spielen
+
+
+NOCH OFFEN – BERICHTE
+---------------------
+[ ] Automatischen Spielbericht erstellen
+[ ] PDF-Export
+[ ] Excel-Export
+[ ] Druckansicht
+[ ] Zusammenfassung für Trainer/innen
+[ ] Spielbericht direkt teilen
+
+
+NOCH OFFEN – APP UND BEDIENUNG
+------------------------------
+[ ] Als installierbare Handy-App (PWA) veröffentlichen
+[ ] Vereinslogo und Vereinsfarben hinterlegen
+[ ] Offline-Modus mit späterer Synchronisierung
+[ ] Große Spielfeld-Tasten für die Nutzung am Spielfeldrand
+[ ] Querformat für Tablets optimieren
+[ ] Tastaturkürzel
+[ ] Sprachsteuerung
+
+
+NOCH OFFEN – CLOUD UND ZUSAMMENARBEIT
+-------------------------------------
+[ ] Cloud-Synchronisierung
+[ ] Zugriff auf Spiele von mehreren Geräten
+[ ] Gemeinsame Live-Erfassung durch mehrere Personen
+[ ] Anmeldung für Trainer/innen
+[ ] Rollen und Rechte
+[ ] Automatische Backups
+

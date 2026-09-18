@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b172a" />
+  <title>Handball Scout</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">H</span><div><strong>Handball Scout</strong><small>Spielanalyse</small></div></div>
+    <div class="top-actions"><button class="ghost" id="themeToggle">☾ Dunkel</button><button class="ghost" id="newGameBtn">＋ Neues Spiel</button><button class="ghost" id="exportBtn">↥ Export</button><label class="ghost file-label">↧ Import<input id="importInput" type="file" accept="application/json" /></label></div>
+  </header>
+
+  <main class="shell">
+    <section class="hero card">
+      <div><p class="eyebrow">SPIELÜBERSICHT</p><h1 id="headline">Dein Spiel. Jede Aktion. Im Blick.</h1><p class="muted">Trage Aktionen live ein und behalte Leistung, Würfe und Abwehr übersichtlich im Blick.</p></div>
+      <div class="scoreboard"><div><span id="teamNameLabel">HEIM</span><b id="homeScore">0</b></div><div class="versus">:</div><div><span>GEGNER</span><b id="awayScore">0</b></div></div>
+    </section>
+
+    <section class="toolbar card">
+      <div class="field"><label>Meine Mannschaft</label><input id="teamName" placeholder="z. B. HSV Weimar" /></div>
+      <div class="field"><label>Gegner</label><input id="opponentName" placeholder="Gegner" /></div>
+      <div class="field compact"><label>Datum</label><input id="gameDate" type="date" /></div>
+      <div class="field compact"><label>Halbzeit</label><select id="half"><option>1. Halbzeit</option><option>2. Halbzeit</option><option>Verlängerung</option></select></div>
+      <div class="field saved-games"><label>Gespeicherte Spiele</label><select id="savedGames"><option value="">Aktuelles Spiel</option></select></div>
+    </section>
+
+    <nav class="tabs"><button class="tab active" data-tab="live">Live erfassen</button><button class="tab" data-tab="stats">Statistik</button><button class="tab" data-tab="roster">Spieler</button><button class="tab" data-tab="season">Saison</button></nav>
+
+    <section id="live" class="tab-panel active">
+      <div class="layout-grid">
+        <div class="card event-card"><div class="section-head"><div><p class="eyebrow">AKTION EINTRAGEN</p><h2>Was ist passiert?</h2></div><span class="live-dot">● LIVE</span></div>
+          <div class="action-grid">
+            <button class="action goal" data-action="goal"><span>＋</span><b>Tor</b><small>erfolgreicher Wurf</small></button>
+            <button class="action miss" data-action="miss"><span>↗</span><b>Fehlwurf</b><small>Wurf nicht getroffen</small></button>
+            <button class="action save" data-action="save"><span>◉</span><b>Parade</b><small>gehaltener Ball</small></button>
+            <button class="action conceded" data-action="conceded"><span>−</span><b>Gegentor</b><small>Ball nicht gehalten</small></button>
+            <button class="action error" data-action="error"><span>!</span><b>Technischer Fehler</b><small>Ballverlust / Schrittfehler</small></button>
+            <button class="action penalty" data-action="penalty"><span>2′</span><b>Zeitstrafe</b><small>2-Minuten-Strafe</small></button>
+            <button class="action card-action" data-action="yellow"><span>▮</span><b>Gelbe Karte</b><small>Verwarnung</small></button>
+            <button class="action card-action red-card" data-action="red"><span>▮</span><b>Rote Karte</b><small>Disqualifikation</small></button>
+            <button class="action substitution" data-action="substitution"><span>↔</span><b>Auswechslung</b><small>Spieler/in wechselt</small></button>
+            <button class="action assist" data-action="assist"><span>↝</span><b>Assist</b><small>Torvorlage</small></button>
+          </div>
+          <div class="event-form hidden" id="eventForm"><div class="form-title" id="eventTitle">Tor erfassen</div><div class="form-row"><div class="field"><label>Spieler/in</label><select id="eventPlayer"></select></div><div class="field"><label>Position / Wurfzone</label><select id="eventZone"><option>Torraum / Kreis</option><option>Links außen</option><option>Rückraum links</option><option>Rückraum Mitte</option><option>Rückraum rechts</option><option>Rechts außen</option><option>7-Meter</option><option>Gegenstoß</option><option>Sonstige</option></select></div></div><div class="form-row"><div class="field"><label>Spielzeit (optional)</label><input id="eventTime" placeholder="z. B. 12:34" /></div><div class="field"><label>Notiz (optional)</label><input id="eventNote" placeholder="z. B. starke Abwehraktion" /></div></div><button class="primary" id="saveEvent">Aktion speichern</button></div>
+        </div>
+        <aside class="card recent"><div class="section-head"><div><p class="eyebrow">CHRONIK</p><h2>Letzte Aktionen</h2></div><button class="icon-btn" id="clearEvents" title="Chronik löschen">⌫</button></div><div id="eventList" class="event-list"><div class="empty">Noch keine Aktionen erfasst.<br /><small>Wähle links eine Aktion aus.</small></div></div></aside>
+      </div>
+    </section>
+
+    <section id="stats" class="tab-panel"><div class="stats-grid" id="statsGrid"></div><div class="card table-card"><div class="section-head"><div><p class="eyebrow">DETAILS</p><h2>Aktionen nach Spieler/in</h2></div></div><div class="table-wrap"><table><thead><tr><th>Spieler/in</th><th>Tore</th><th>Würfe daneben</th><th>Paraden</th><th>Gegentore</th><th>Fehler</th></tr></thead><tbody id="playerTable"></tbody></table></div></div></section>
+
+    <section id="roster" class="tab-panel"><div class="card roster-card"><div class="section-head"><div><p class="eyebrow">MANNSCHAFT</p><h2>Spieler/innen</h2><p class="muted">Füge die Trikotnummern hinzu, die du während des Spiels auswählen möchtest.</p></div></div><div class="add-player"><input id="playerNumber" inputmode="numeric" placeholder="Nr." /><input id="playerName" placeholder="Name oder Position" /><button class="primary" id="addPlayer">Spieler hinzufügen</button></div><div id="rosterList" class="roster-list"></div></div></section>
+    <section id="season" class="tab-panel"><div class="stats-grid" id="seasonGrid"></div><div class="card table-card"><div class="section-head"><div><p class="eyebrow">SAISONÜBERSICHT</p><h2>Spielerstatistik über alle gespeicherten Spiele</h2></div></div><div class="table-wrap"><table><thead><tr><th>Spieler/in</th><th>Spiele</th><th>Tore</th><th>Paraden</th><th>Fehler</th><th>Zeitstrafen</th><th>Karten</th></tr></thead><tbody id="seasonTable"></tbody></table></div></div></section>
+  </main>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
